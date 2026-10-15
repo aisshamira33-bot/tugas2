@@ -1,25 +1,36 @@
-name: Build Tugas 2
+#include <iostream>
+using namespace std;
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+int main() {
+    int soto, rawon;
+    int total;
 
-jobs:
-  build:
-    runs-on: windows-latest
+    cout << "==============================" << endl;
+    cout << "        MENU MAKANAN" << endl;
+    cout << "==============================" << endl;
+    cout << "Soto  : Rp15.000" << endl;
+    cout << "Rawon : Rp20.000" << endl;
+    cout << "==============================" << endl;
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    cout << "Jumlah Soto  (0 jika tidak beli): ";
+    cin >> soto;
 
-      - name: Compile C++
-        shell: bash
-        run: g++ tugas_2.cpp -o tugas_2.exe -static
+    cout << "Jumlah Rawon (0 jika tidak beli): ";
+    cin >> rawon;
 
-      - name: Upload EXE
-        uses: actions/upload-artifact@v4
-        with:
-          name: tugas_2-exe
-          path: tugas_2.exe
+    total = (soto * 15000) + (rawon * 20000);
+
+    cout << endl;
+    cout << "==============================" << endl;
+    cout << "        STRUK PEMBELIAN" << endl;
+    cout << "==============================" << endl;
+    cout << "Soto  : " << soto << " x Rp15.000" << endl;
+    cout << "Rawon : " << rawon << " x Rp20.000" << endl;
+    cout << "------------------------------" << endl;
+    cout << "Total : Rp" << total << endl;
+    cout << "==============================" << endl;
+
+    system("pause");
+
+    return 0;
+}
